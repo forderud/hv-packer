@@ -33,11 +33,6 @@ variable "output_directory" {
   default = ""
 }
 
-// variable "output_vagrant" {
-//   type    = string
-//   default = ""
-// }
-
 variable "secondary_iso_image" {
   type    = string
   default = ""
@@ -53,21 +48,10 @@ variable "sysprep_unattended" {
   default = ""
 }
 
-
-// variable "vagrantfile_template" {
-//   type    = string
-//   default = ""
-// }
-
 variable "upgrade_timeout" {
   type    = string
   default = ""
 }
-
-// variable "vagrant_sysprep_unattended" {
-//   type    = string
-//   default = ""
-// }
 
 variable "vlan_id" {
   type    = string

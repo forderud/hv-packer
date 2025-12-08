@@ -60,7 +60,6 @@ Consider buying me a coffee if you like my work. All donations are appreciated. 
 - packer >=`1.10.0`. Do not use packer below 1.7.0 version. For previous packer versions use previous releases from this repository
 - Microsoft Hyper-V Server 2016/2019 or Microsoft Windows Server 2016/2019 (not 2012/R2) with Hyper-V role installed as host to build your images
 - firewall exceptions for `packer` http server (look down below)
-- [OPTIONAL] Vagrant >= `2.3.4` - for `vagrant` version of scripts. Boxes (prebuilt) are already available here: [https://app.vagrantup.com/marcinbojko](https://app.vagrantup.com/marcinbojko)
 - be aware, for 2016 - VMs are in version 8.0, for 2019 - VMs are in version 9.0. There is no way to reuse higher version in previous operating system. If you need v8.0 - build and use only VHDX.
 - properly constructed virtual switch in Hyper-v allowing virtual machine to get IP from DHCP and contact Hyper-V server on mentioned packer ports. This is a must, if kickstart is reachable over the network.
 
@@ -79,12 +78,6 @@ In root folder of a repository
 ```cmd
 packer init --upgrade config.pkr.hcl
 ```
-
-<!-- ### Install vagrant from Chocolatey
-
-```cmd
-choco install vagrant --version=2.3.4 -y
-``` -->
 
 ### Use account with Administrator privileges for Hyper-V
 
