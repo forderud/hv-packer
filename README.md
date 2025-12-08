@@ -127,7 +127,6 @@ switch_name = "vSwitch"
   |Package|Version|Mandatory/Optional|
   |-------|-------|------------------|
   |dotnetfx|latest|Mandatory|
-  |sysinternals|latest|Mandatory|
   |tabby|latest|Optional|
 
 ### Linux Machines

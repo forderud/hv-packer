@@ -1,6 +1,6 @@
 # Phase 2 - generic and essential stuff
 $goterror=0
-$packages=@("sysinternals","dotnetfx")
+$packages=@("dotnetfx")
 $packages_count=$packages.Count
 $packages_attempt=1
 $packages_success=$false
