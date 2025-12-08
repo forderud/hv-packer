@@ -25,7 +25,6 @@ Consider buying me a coffee if you like my work. All donations are appreciated. 
   - [Scripts](#scripts)
     - [Windows Machines](#windows-machines)
     - [Linux Machines](#linux-machines)
-      - [Ansible Playbooks CentOS/AlmaLinux/RockyLinux/OracleLinux](#ansible-playbooks-centosalmalinuxrockylinuxoraclelinux)
   - [Usage](#usage)
     - [hv_generic.ps1 parameters](#hv_genericps1-parameters)
     - [Building Microsoft Windows](#building-microsoft-windows)
@@ -49,7 +48,6 @@ Consider buying me a coffee if you like my work. All donations are appreciated. 
     - [Packer won't run until VirtualSwitch is created as shared](#packer-wont-run-until-virtualswitch-is-created-as-shared)
     - [I have problem how to find a proper WIM  name in Windows ISO to pick proper version](#i-have-problem-how-to-find-a-proper-wim--name-in-windows-iso-to-pick-proper-version)
     - [On Windows machines, build break during updates phase, when update cycles are interfering with each other](#on-windows-machines-build-break-during-updates-phase-when-update-cycles-are-interfering-with-each-other)
-    - [Why don't you use ansible instead of shell scripts for provisioning](#why-dont-you-use-ansible-instead-of-shell-scripts-for-provisioning)
   - [Support me](#support-me)
   - [About](#about)
 
@@ -135,27 +133,6 @@ switch_name = "vSwitch"
   |Neofetch  |neofetch|can be switched off by setting "install_neofetch" to `false`|true|
 
   Be aware, turning off latest System Center Virtual Machine Agent will cause System Center fail to deploy machines
-
-#### Ansible Playbooks (CentOS/AlmaLinux/RockyLinux/OracleLinux)
-
-During deployment ansible-base and ansible are installed in operating system. After deployment ends, these packages are removed.
-Playbooks are held in `/extra/playbooks` folder, with proper OS variables.
-
-- adjust `./variables/*.yml` files to achieve override for ansible
-
-```yaml
-install_epel:                  true  # install Epel
-install_webmin:                true  # install Webmin
-install_hyperv:                true  # install Hyper-v and scvmm agent
-install_cockpit:               false # install Cockpit
-install_docker_workaround:     true  # add `fsck.repair=yes` to grub
-install_neofetch:              true  # install neofetch
-install_updates:               true  # install updates
-install_extra_groups:          true  # install extra groups
-docker_prepare:                false # prepare extra volumen for docker
-extra_device:                  ""    # prepare mkfs and mount extra block device for docker
-install_motd:                  true  # install motd (neofetch run)
-```
 
 ## Usage
 
@@ -337,10 +314,6 @@ You can use number. If you have 4 images on the list of choice - use `ImageIndex
 ### On Windows machines, build break during updates phase, when update cycles are interfering with each other
 
 Increase variable  `update_timeout` in `./variables/*.json` file - this will create longer pauses between stages, allowing cycles to complete before jumping to another one.
-
-### Why don't you use ansible instead of shell scripts for provisioning
-
-I wish. In short - Windows. These builds should be done with minimum effort (Hyper-V role is enough). Building custom ansible station with lots of checks right now fails in my tryouts.
 
 ## Support me
 

@@ -8,9 +8,5 @@ packer {
       version = ">= 1.1.0"
       source  = "github.com/hashicorp/hyperv"
     }
-    ansible = {
-      source  = "github.com/hashicorp/ansible"
-      version = "~> 1"
-    }
   }
 }
