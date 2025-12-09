@@ -78,6 +78,7 @@ source "hyperv-iso" "vm" {
   memory                = "${var.memory}"
   output_directory      = "${var.output_directory}"
   secondary_iso_images  = ["${var.secondary_iso_image}"]
+  disable_shutdown      = true
   shutdown_timeout      = "30m"
   skip_export           = true
   switch_name           = "${var.switch_name}"
