@@ -132,13 +132,6 @@ build {
     restart_timeout = "1h"
   }
 
-
-  provisioner "powershell" {
-    elevated_password = "password"
-    elevated_user     = "Administrator"
-    script            = "./extra/scripts/windows/shared/phase-5a.software.ps1"
-  }
-
   provisioner "powershell" {
     elevated_password = "password"
     elevated_user     = "Administrator"
