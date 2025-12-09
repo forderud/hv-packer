@@ -78,7 +78,7 @@ source "hyperv-iso" "vm" {
   memory                = "${var.memory}"
   output_directory      = "${var.output_directory}"
   secondary_iso_images  = ["${var.secondary_iso_image}"]
-  disable_shutdown      = true
+  shutdown_command      = "C:\\Windows\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /shutdown /quiet /unattend:C:\\Windows\\System32\\Sysprep\\unattend.xml"
   shutdown_timeout      = "30m"
   skip_export           = true
   switch_name           = "${var.switch_name}"
@@ -143,9 +143,4 @@ build {
     destination = "C:\\Windows\\System32\\Sysprep\\unattend.xml"
     source      = "${var.sysprep_unattended}"
   }
-
-  provisioner "powershell" {
-    inline = ["Write-Output Phase-5-Deprovisioning", "if (!(Test-Path -Path $Env:SystemRoot\\system32\\Sysprep\\unattend.xml)){ Write-Output 'No file';exit (10)}", "& $Env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /shutdown /quiet /unattend:C:\\Windows\\system32\\sysprep\\unattend.xml"]
-  }
-
 }
