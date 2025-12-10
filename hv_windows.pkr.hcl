@@ -131,7 +131,7 @@ build {
   provisioner "powershell" {
     elevated_password = "password"
     elevated_user     = "Administrator"
-    script            = "./extra/scripts/windows/shared/phase-5d.windows-compress.ps1"
+    script            = "./scripts/phase-5d.windows-compress.ps1"
   }
 
   provisioner "file" {
