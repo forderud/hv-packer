@@ -78,7 +78,7 @@ source "hyperv-iso" "vm" {
   memory                = "${var.memory}"
   output_directory      = "${var.output_directory}"
   secondary_iso_images  = ["${var.secondary_iso_image}"]
-  shutdown_command      = "C:/Windows/System32/Sysprep/Sysprep.exe /oobe /generalize /shutdown /quiet /unattend:C:/Windows/System32/Sysprep/unattend.xml"
+  shutdown_command      = "C:/PackerShutdown.bat"
   shutdown_timeout      = "30m"
   skip_export           = true
   switch_name           = "${var.switch_name}"
@@ -142,5 +142,9 @@ build {
   provisioner "file" {
     destination = "C:\\Windows\\System32\\Sysprep\\unattend.xml"
     source      = "${var.sysprep_unattended}"
+  }
+  provisioner "file" {
+    destination = "C:\\PackerShutdown.bat"
+    source      = "./extra/scripts/windows/shared/PackerShutdown.bat"
   }
 }
