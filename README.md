@@ -147,8 +147,8 @@ Building machines is realised through a dedicated script `hv_generic.ps1` with p
 For Generation 2 prepare `secondary.iso` with folder structure:
 
 ```example
-- ./extra/files/Autounattend.xml     => /Autounattend.xml
-- ./extra/files/bootstrap.ps1        => /bootstrap.ps1
+- ./files/Autounattend.xml     => /Autounattend.xml
+- ./files/bootstrap.ps1        => /bootstrap.ps1
 ```
 
 This template uses this image name in Autounattendes.xml. If youre using different ISO you'll have to adjust that part in proper file and rebuild `secondary.iso` image.
