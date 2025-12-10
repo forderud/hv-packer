@@ -95,7 +95,7 @@ build {
   provisioner "powershell" {
     elevated_password = "password"
     elevated_user     = "Administrator"
-    script            = "./extra/scripts/windows/shared/phase-1.ps1"
+    script            = "./extra/scripts/phase-1.ps1"
   }
 
   provisioner "windows-restart" {
@@ -105,7 +105,7 @@ build {
   provisioner "powershell" {
     elevated_password = "password"
     elevated_user     = "Administrator"
-    script            = "./extra/scripts/windows/shared/phase-2.ps1"
+    script            = "./extra/scripts/phase-2.ps1"
   }
 
   provisioner "windows-restart" {
@@ -144,6 +144,6 @@ build {
   }
   provisioner "file" {
     destination = "C:\\PackerShutdown.bat"
-    source      = "./extra/scripts/windows/shared/PackerShutdown.bat"
+    source      = "./extra/scripts/PackerShutdown.bat"
   }
 }
