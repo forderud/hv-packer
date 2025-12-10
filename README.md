@@ -148,7 +148,7 @@ For Generation 2 prepare `secondary.iso` with folder structure:
 
 ```example
 - ./extra/files/Autounattend.xml     => /Autounattend.xml
-- ./extra/scripts/hyper-v/bootstrap.ps1            => /bootstrap.ps1
+- ./extra/files/bootstrap.ps1        => /bootstrap.ps1
 ```
 
 This template uses this image name in Autounattendes.xml. If youre using different ISO you'll have to adjust that part in proper file and rebuild `secondary.iso` image.
