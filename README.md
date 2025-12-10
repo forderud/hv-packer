@@ -90,8 +90,8 @@ New-NetFirewallRule -DisplayName "Packer_http_server" -Direction Inbound -Action
 
 To adjust to your Hyper-V, please check variables below and/or in ./variables files
 
-- (variable `vlan_id` in /variables/variables.*.pkvars.hcl) - proper VLAN ID . Look up to find your build server vEthernet setings.
-- (variable `switch_name` in /variables/variables.*.pkvars.hcl) - proper Hyper-V Virtual Switch name (access to Internet will be required). Make sure you're using pre-existing switch in your Hyper-V server - creation of new switch by packer, instead of reusing existing one can cause lack of Internet access, thus failing the build.
+- (variable `vlan_id` in /variables.*.pkvars.hcl) - proper VLAN ID . Look up to find your build server vEthernet setings.
+- (variable `switch_name` in /variables.*.pkvars.hcl) - proper Hyper-V Virtual Switch name (access to Internet will be required). Make sure you're using pre-existing switch in your Hyper-V server - creation of new switch by packer, instead of reusing existing one can cause lack of Internet access, thus failing the build.
 
 ```yaml
 # example of mentioned variables
