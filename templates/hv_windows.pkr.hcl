@@ -79,7 +79,6 @@ source "hyperv-iso" "vm" {
   output_directory      = "${var.output_directory}"
   secondary_iso_images  = ["${var.secondary_iso_image}"]
   shutdown_command      = "C:/PackerShutdown.bat"
-  shutdown_timeout      = "30m"
   skip_export           = true
   switch_name           = "${var.switch_name}"
   temp_path             = "."
