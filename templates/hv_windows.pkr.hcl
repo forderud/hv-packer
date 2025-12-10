@@ -33,11 +33,6 @@ variable "output_directory" {
   default = ""
 }
 
-variable "secondary_iso_image" {
-  type    = string
-  default = ""
-}
-
 variable "switch_name" {
   type    = string
   default = ""
@@ -77,7 +72,8 @@ source "hyperv-iso" "vm" {
   iso_url               = "${var.iso_url}"
   memory                = "${var.memory}"
   output_directory      = "${var.output_directory}"
-  secondary_iso_images  = ["${var.secondary_iso_image}"]
+  cd_files              = ["./files/Autounattend.xml", "./files/bootstrap.ps1"]
+  cd_label              = "cidata"
   shutdown_command      = "C:/PackerShutdown.bat"
   skip_export           = true
   switch_name           = "${var.switch_name}"
