@@ -147,7 +147,7 @@ Building machines is realised through a dedicated script `hv_generic.ps1` with p
 For Generation 2 prepare `secondary.iso` with folder structure:
 
 ```example
-- ./extra/files/windows/2022/std/Autounattend.xml     => /Autounattend.xml
+- ./extra/files/Autounattend.xml     => /Autounattend.xml
 - ./extra/scripts/hyper-v/bootstrap.ps1            => /bootstrap.ps1
 ```
 
